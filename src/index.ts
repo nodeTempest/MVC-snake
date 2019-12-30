@@ -109,16 +109,16 @@ class Model {
   }
 
   generateFood() {
-    let x = _.random(9);
-    let y = _.random(9);
+    let x = _.random(this.width - 1);
+    let y = _.random(this.height - 1);
 
     const snakeCollides = (): boolean => {
       return this.snake.some(coords => coords.x === x || coords.y === y);
     };
 
     while (snakeCollides()) {
-      x = _.random(9);
-      y = _.random(9);
+      x = _.random(this.width - 1);
+      y = _.random(this.height - 1);
     }
 
     this.food = {
