@@ -23,10 +23,10 @@ interface coords {
 }
 
 enum directionTypes {
-  RIGHT = "RIGHT",
-  LEFT = "LEFT",
-  DOWN = "DOWN",
-  UP = "UP"
+  RIGHT,
+  LEFT,
+  DOWN,
+  UP
 }
 
 enum modelEvents {
