@@ -112,11 +112,13 @@ class Model {
     let x = _.random(this.width - 1);
     let y = _.random(this.height - 1);
 
-    const snakeCollides = (): boolean => {
-      return this.snake.some(coords => coords.x === x || coords.y === y);
-    };
+    const snakeCollides = (foodCoords: coords): boolean =>
+      this.snake.some(
+        snakeCoords =>
+          snakeCoords.x === foodCoords.x && snakeCoords.y === foodCoords.y
+      );
 
-    while (snakeCollides()) {
+    while (snakeCollides({ x, y })) {
       x = _.random(this.width - 1);
       y = _.random(this.height - 1);
     }
